@@ -1,14 +1,13 @@
 import React from "react"
-import Layout from "../../components/layout"
+import Layout from "../../components/Layout"
 import { graphql, Link } from "gatsby"
-import SEO from "../../components/seo"
+
 
 const Services = ({ data }) => {
   const services = data.allContentfulServiceType.nodes
 
   return (
     <Layout>
-      <SEO title="Tags" />
       <main className="page">
         <section className="tags-page">
           {services.map(item => {
