@@ -1,3 +1,26 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const contentfulConfig = {
+  spaceId: process.env.CONTENTFUL_SPACE_ID,
+  accessToken:
+      process.env.CONTENTFUL_ACCESS_TOKEN ||
+      process.env.CONTENTFUL_DELIVERY_TOKEN,
+};
+
+if (process.env.CONTENTFUL_HOST) {
+  contentfulConfig.host = process.env.CONTENTFUL_HOST;
+  contentfulConfig.accessToken = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN;
+}
+
+const { spaceId, accessToken } = contentfulConfig;
+
+if (!spaceId || !accessToken) {
+  throw new Error(
+      "Contentful spaceId and the access token need to be provided."
+  );
+}
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -29,6 +52,10 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: contentfulConfig
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
