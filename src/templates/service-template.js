@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ServicesList from "../components/servicesList"
+import ServicesList from "../components/ServicesList"
 
 const ServiceTemplate = ({ data }) => {
   const servicesList = data.allContentfulService.nodes
