@@ -1,13 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ServicesList from "../components/ServicesList"
+import ServicesList from "../components/ServicesList/"
+import Layout from "../components/Layout";
 
 const ServiceTemplate = ({ data }) => {
   const servicesList = data.allContentfulService.nodes
   return (
-      <main className="page">
-        <ServicesList services={servicesList} />
-      </main>
+      <Layout>
+        <div className="container">
+          <ServicesList services={servicesList} />
+        </div>
+      </Layout>
   )
 }
 

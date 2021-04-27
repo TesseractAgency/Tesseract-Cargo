@@ -1,17 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import * as ServicesListStyles from "./servicesList.module.css";
 const ServicesList = ({ services = [] }) => {
   return (
-    <div className="recipes-list">
+    <section className={ServicesListStyles.servicesList}>
       {services.map(service => {
         const { id, title, image, slug } = service
         const pathToImage = getImage(image)
         return (
-          <Link key={id} to={`/${slug}`} className="recipe">
+          <Link key={id} to={`/${slug}`} className="service">
             <GatsbyImage
               image={pathToImage}
-              className="recipe-img"
               alt={title}
             />
             <h5>{title}</h5>
@@ -24,7 +24,7 @@ const ServicesList = ({ services = [] }) => {
           </Link>
         )
       })}
-    </div>
+    </section>
   )
 }
 

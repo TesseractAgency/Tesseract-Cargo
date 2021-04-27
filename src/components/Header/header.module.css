@@ -1,0 +1,6 @@
+.pageHeader{
+    height: 50px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+}

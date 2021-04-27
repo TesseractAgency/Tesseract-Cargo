@@ -1,0 +1,21 @@
+.services{
+
+}
+
+.servicesInner{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 650px));
+    grid-gap: 50px;
+    justify-content: center;
+}
+
+.service{
+    display: grid;
+    justify-content: center;
+    grid-gap: 25px;
+
+}
+
+.serviceImg{
+    max-height: 500px;
+}

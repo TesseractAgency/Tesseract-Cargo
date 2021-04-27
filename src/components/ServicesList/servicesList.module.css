@@ -1,0 +1,6 @@
+.servicesList{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 650px));
+    grid-gap: 50px;
+    justify-content: center;
+}
