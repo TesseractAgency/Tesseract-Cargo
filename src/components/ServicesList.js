@@ -8,7 +8,7 @@ const ServicesList = ({ services = [] }) => {
         const { id, title, image, slug } = service
         const pathToImage = getImage(image)
         return (
-          <Link key={id} to={`/services/${slug}`} className="recipe">
+          <Link key={id} to={`/${slug}`} className="recipe">
             <GatsbyImage
               image={pathToImage}
               className="recipe-img"

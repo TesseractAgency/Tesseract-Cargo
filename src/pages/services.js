@@ -9,7 +9,7 @@ const Services = ({ data }) => {
       <section className="tags-page">
         {services.map(item => {
           return (
-            <Link to={`/services/${item.slug}`} key={item.id} className="tag">
+            <Link to={`/${item.slug}`} key={item.id} className="tag">
               <h5>{item.title}</h5>
             </Link>
           )
